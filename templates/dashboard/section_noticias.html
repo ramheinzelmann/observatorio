@@ -1,0 +1,34 @@
+{% load static %}
+
+<section>
+    <header class="major">
+        <h2>Notícias</h2>
+    </header>
+    <div class="posts">
+
+        <article>
+            <h3>{{ noticia01.titulo }}</h3>
+            <br>
+            <blockquote>
+                <p style="text-align: justify">{{ noticia01.resumo|safe }}</p>
+            </blockquote>
+            <p>Fonte:<i> {{ noticia01.fonte }}</i></p>
+            <ul class="actions">
+                <li><a href="{% url 'noticias' %}" class="button primary small">Mais</a></li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>{{ noticia02.titulo }}</h3>
+            <br>
+            <blockquote>
+                <p style="text-align: justify">{{ noticia02.resumo|safe }}</p>
+            </blockquote>
+            <p>Fonte:<i> {{ noticia02.fonte }}</i></p>
+            <ul class="actions">
+                <li><a href="{% url 'noticias' %}" class="button primary small">Mais</a></li>
+            </ul>
+        </article>
+
+    </div>
+</section>

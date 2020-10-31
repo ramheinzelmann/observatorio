@@ -1,0 +1,28 @@
+{% extends 'app/app_base.html' %}
+{% block conteudo %}
+{% load static %}
+
+<section id="banner">
+
+    <div class="content">
+
+        {% for dado in dados %}
+
+            <header>
+                <a href="#"><h2>{{ dado.titulo|safe }}</h2></a>
+            </header>
+            <blockquote>
+                <p style="text-align: justify">{{ dado.resumo|safe }}</p>
+            </blockquote>
+            <p><strong>Fonte</strong>: {{ dado.fonte|safe }}<br>
+                <strong>Publicação</strong>: {{ dado.data|safe }}
+            </p>
+            <hr>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

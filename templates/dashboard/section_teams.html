@@ -1,0 +1,52 @@
+{% load static %}
+<section id="teams">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<header class="major">
+		  <h2>Nosso Time</h2>
+		</header>
+
+		<p style="text-align: justify">
+		Qualquer empresa é resultado direto da qualidade e da competência de seu Time. Comprometimento,
+		profissionalismo e empatia com o nosso cliente são os nossos pilares.
+		Temos o orgulho de apresentar o nosso Time.
+		</p>
+		<br><br><br>
+		<div class="row">
+
+			{% for team in teams %}
+
+				<div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="">
+					<div>
+						<div class="circle">
+							{{ team.foto|safe }}
+						</div>
+						<ul class="icons">
+							<li><a href="{{ team.facebook }}" class="icon brands fa-facebook-f" target="_blank" style="color: #00008B">
+								<span class="label">Facebook</span></a></li>
+							<li><a href="{{ team.instagram }}" class="icon brands fa-instagram" target="_blank" style="color: #00008B">
+								<span class="label">Instagram</span></a></li>
+							<li><a href="{{ team.linkedin }}" class="icon brands fa-linkedin" target="_blank" style="color: #00008B">
+								<span class="label">Linkedin</span></a></li>
+							<li><a href="{{ team.lattes }}" target="_blank">
+								<span class="label"><strong style="color: #00008B">Lattes</strong></span></a></li>
+						</ul>
+						<div class="p-3">
+							<blockquote>
+								<h6>{{ team.nome|safe }}</h6>
+								<span class="position">
+									Cargo: {{ team.cargo|safe }}<br>
+									Função: {{ team.funcao|safe }}
+								</span>
+							</blockquote>
+						</div>
+					</div>
+
+				</div>
+
+			{% endfor %}
+
+			<a href="{% url 'index' %}" class="button primary small icon solid fa-arrow-circle-up">Topo</a>
+		</div>
+
+</section>
