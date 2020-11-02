@@ -2,14 +2,15 @@
 from django.shortcuts import render
 
 from app.app import noticias_home, pluviograma_home
-from app.sql import get_noticias, get_pluviograma
-from app.models import Noticias, Tempertura, Precipitacao, Teams, Publicacoes, Pluviograma
+from app.sql import get_noticias, get_pluviograma, get_dashboard
+from app.models import Noticias, Tempertura, Precipitacao, Teams, Publicacoes, Dashboard
 
 
 def index(request):
 
     noticias = get_noticias()
     pluviograma = get_pluviograma()
+    dashboards = get_dashboard()
 
     if not noticias or not pluviograma:
         return render(request, 'index.html')
@@ -21,7 +22,8 @@ def index(request):
     teams = Teams.objects.all()
 
     return render(request, 'index.html', {'noticia01': noticia01, 'noticia02': noticia02, 'teams': teams,
-                                          'pluviograma01': pluviograma01, 'pluviograma02': pluviograma02})
+                                          'pluviograma01': pluviograma01, 'pluviograma02': pluviograma02,
+                                          'dashboards': dashboards})
 
 
 def noticias(request):

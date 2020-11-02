@@ -5,21 +5,18 @@
 {% for dado in dados %}
 
     <section id="banner">
-        <span class="image object">
-            {{ dado.imagem|safe }}
-            <p><strong>Publicacao</strong>: {{ dado.data }}</p>
-        </span>
 
-        <div class="content">
+        <span class="image object">
+            <p>{{ dado.imagem|safe }}</p>
+        </span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div class="content" style="text-align: justify">
             <header>
+                <br><br>
                 <h3><strong>{{ dado.titulo }}</strong></h3>
             </header>
-            <blockquote>
-                {{ dado.conteudo|safe }}
-            </blockquote>
-            <ul class="actions">
-                <li><a href="#" class="button primary small">Mais Informações</a></li>
-            </ul>
+            <p>{{ dado.conteudo|safe }}</p>
+            <p><strong>Publicação</strong>: {{ dado.data }}</p>
         </div>
 
     </section>

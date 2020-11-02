@@ -19,13 +19,13 @@ def get_noticias():
         noticias = {
             "id": linha[0],
             "titulo": linha[1],
-            "url": linha[2],
-            "fonte": linha[3],
-            "resumo": linha[4],
-            "imagem": linha[5],
-            "data": linha[6],
+            "fonte": linha[2],
+            "resumo": linha[3],
+            "imagem": linha[4],
+            "data": linha[5],
+            "publicar": linha[6],
             "autor_id": linha[7],
-            "publicar": linha[8],
+            "url": linha[8],
         }
 
         list_noticias.append(noticias)
@@ -64,3 +64,34 @@ def get_pluviograma():
         return list_pluviograma
 
     return list_pluviograma
+
+
+def get_dashboard():
+    conn, cursor = conexao_db()
+    cursor.execute(f"""SELECT * FROM app_dashboard;""")
+
+    dashboards = None
+
+    list_dashboards = []
+    for linha in cursor.fetchall():
+        dashboards = {
+            "id": linha[0],
+            "titulo": linha[1],
+            "data": linha[2],
+            "publicar": linha[3],
+            "autor_id": linha[4],
+            "imagem_post_01": linha[5],
+            "imagem_post_02": linha[6],
+            "imagem_post_04": linha[7],
+            "imagem_mini_post_01": linha[8],
+            "imagem_post_03": linha[9],
+        }
+
+        list_dashboards.append(dashboards)
+
+    conn.close()
+
+    if not list_dashboards:
+        return list_dashboards
+
+    return list_dashboards

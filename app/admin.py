@@ -1,6 +1,6 @@
 from django.contrib import admin
 from app.models import Noticias, Post, Tempertura, Precipitacao, Teams, Publicacoes, Queimadas, Alagamento, \
-    Reservatorios, Projetos, Pluviograma
+    Reservatorios, Projetos, Pluviograma, Dashboard, Imagens, Imagens_Banner
 
 # Register your models here.
 
@@ -15,3 +15,6 @@ admin.site.register(Alagamento)
 admin.site.register(Reservatorios)
 admin.site.register(Projetos)
 admin.site.register(Pluviograma)
+admin.site.register(Dashboard)
+admin.site.register(Imagens)
+admin.site.register(Imagens_Banner)
