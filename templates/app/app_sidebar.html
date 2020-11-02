@@ -1,80 +1,20 @@
+{% extends 'dashboard/sidebar_base.html' %}
+{% block conteudo %}
 {% load static %}
 
-<div id="sidebar">
-    <div class="inner">
+<ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
 
-        <!-- Search -->
-            <section id="search" class="alt">
-                <form method="post" action="#">
-                    <input type="text" name="query" id="query" placeholder="Search" />
-                </form>
-            </section>
+    <li><a href="{% url 'temperatura' %}">Temperatura</a></li>
+    <li><a href="{% url 'precipitacao' %}">Precipitação</a></li>
+    <li><a href="#">Queimada</a></li>
+    <li><a href="#">Alagamento</a></li>
+    <li><a href="#">Reservatórios</a></li>
 
-        <!-- Menu -->
-            <nav id="menu">
-                <header class="major">
-                    <h2>Menu</h2>
-                </header>
-                <ul>
-                    <li><a href="{% url 'index' %}">Home</a></li>
-<!--                    <li><a href="#teams">Nosso Time</a></li>-->
-                    <li><a href="{% url 'temperatura' %}">Temperatura</a></li>
-                    <li><a href="{% url 'precipitacao' %}">Precipitação</a></li>
-                    <li><a href="#">Queimada</a></li>
-                    <li><a href="#">Alagamento</a></li>
-                    <li><a href="#">Reservatórios</a></li>
-                    <li><a href="#">Projetos</a></li>
-                    <li><a href="{% url 'publicacoes' %}">Publicações</a></li>
-                    <li><a href="{% url 'noticias' %}">Notícas</a></li>
-                    <li>
-                        <span class="opener">Links úteis</span>
-                        <ul>
-                            <li><a href="#">Unb Geográfia</a></li>
-                            <li><a href="https://portal.inmet.gov.br/" target="_blank">Inmet</a></li>
-                            <li><a href="https://brasilemsintese.ibge.gov.br/" target="_blank">IBGE</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+    <li><a href="#">Projetos</a></li>
+    <li><a href="{% url 'publicacoes' %}">Publicações</a></li>
+    <li><a href="{% url 'noticias' %}">Notícas</a></li>
 
-        <!-- Section -->
-            <section>
-                <header class="major"></header>
-                <div class="mini-posts">
-                    <article>
-                        <h2>Brasília/DF</h2>
-                        <br><br>
-                        <a href="#" class="image"><img src="{% static 'images/tempo.jpeg' %}" alt="" /></a>
-                        <br><br>
-                    </article>
-                </div>
-                <ul class="actions">
+</ul>
 
-                    <li><a href="#" class="button primary small">Saiba mais</a></li>
-                </ul>
-            </section>
-
-        <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Contato</h2>
-                </header>
-                <p>Digite um texto de contato...</p>
-                <ul class="contact">
-                    <li class="icon solid fa-envelope"><a href="#">contato@contato.com.br</a></li>
-                    <li class="icon solid fa-phone">+55 61 3107-7594</li>
-                    <li class="icon solid fa-home">Campus Universitário Darcy Ribeiro, Brasília -
-                        CEP 70904-970<br />
-                    </li>
-                </ul>
-            </section>
-
-        <!-- Footer -->
-            <footer id="footer">
-                <p class="copyright">&copy; All rights reserved.
-                    <a href="#">RMCred.</a>
-                </p>
-            </footer>
-
-    </div>
-</div>
+{% endblock %}

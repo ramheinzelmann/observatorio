@@ -1,0 +1,68 @@
+{% load static %}
+
+<div id="sidebar">
+    <div class="inner">
+
+        <!-- Search -->
+            <section id="search" class="alt">
+                <span>
+                    <a href="https://www.unb.br/" target="_blank">
+                        <p style="text-align: center;">
+                            <img src="{% static 'images/unb.jpg' %}" alt="" width="250" height="50">
+                        </p>
+                    </a>
+                </span>
+            </section>
+
+        <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2><strong>Menu</strong></h2>
+                </header>
+
+                <!-- Conteudo -->
+                    {% block conteudo %}
+                    {% endblock %}
+
+            </nav>
+
+        <!-- Informação -->
+            <section>
+                <header class="major"></header>
+                <div class="mini-posts">
+                    <article>
+                        <h2>Brasília/DF</h2>
+                        <br><br>
+                        <a href="#" class="image"><img src="{% static 'images/tempo.jpeg' %}" alt="" /></a>
+                        <br><br>
+                    </article>
+                </div>
+                <ul class="actions">
+                    <li><a href="#" class="button primary small">Saiba mais</a></li>
+                </ul>
+            </section>
+
+        <!-- Rodapé -->
+            <section>
+                <header class="major">
+                    <h2>Contato</h2>
+                </header>
+                <p>Digite um texto de contato...</p>
+                <ul class="contact">
+                    <li class="icon solid fa-envelope"><a href="#">contato@contato.com.br</a></li>
+                    <li class="icon solid fa-phone">+55 61 3107-7594</li>
+                    <li class="icon solid fa-home">Campus Universitário Darcy Ribeiro, Brasília -
+                        CEP 70904-970<br />
+                    </li>
+                </ul>
+            </section>
+
+        <!-- Direitos -->
+            <footer id="footer">
+                <p class="copyright">&copy; All rights reserved.
+                    <a href="#">RMCred.</a>
+                </p>
+            </footer>
+
+    </div>
+</div>

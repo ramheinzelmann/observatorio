@@ -6,9 +6,9 @@
 
     <section id="banner">
 
-        <span class="image object">
-            <p>{{ dado.imagem|safe }}</p>
-        </span>&nbsp;&nbsp;&nbsp;&nbsp;
+<!--        <span class="image object">-->
+<!--            <p>{{ dado.imagem|safe }}</p>-->
+<!--        </span>&nbsp;&nbsp;&nbsp;&nbsp;-->
 
         <div class="content" style="text-align: justify">
             <header>
@@ -18,6 +18,10 @@
             <p>{{ dado.conteudo|safe }}</p>
             <p><strong>Publicação</strong>: {{ dado.data }}</p>
         </div>
+
+        <span class="image object">
+            <p>{{ dado.imagem|safe }}</p>
+        </span>
 
     </section>
 
