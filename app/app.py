@@ -24,7 +24,6 @@ def noticias_home(noticias):
         return noticia01, noticia02
 
     except Exception as e:
-        print(e)
         noticia01 = None
         noticia02 = None
         return noticia01, noticia02
