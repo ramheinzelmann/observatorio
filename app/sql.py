@@ -49,11 +49,11 @@ def get_pluviograma():
         pluviograma = {
             "id": linha[0],
             "titulo": linha[1],
-            "resumo": linha[2],
-            "imagem": linha[3],
-            "data": linha[4],
-            "publicar": linha[5],
-            "autor_id": linha[6],
+            "data": linha[2],
+            "publicar": linha[3],
+            "autor_id": linha[4],
+            "imagem_mini_post": linha[5],
+            "fonte": linha[6],
         }
 
         list_pluviograma.append(pluviograma)
@@ -80,11 +80,8 @@ def get_dashboard():
             "data": linha[2],
             "publicar": linha[3],
             "autor_id": linha[4],
-            "imagem_post_01": linha[5],
-            "imagem_post_02": linha[6],
-            "imagem_post_04": linha[7],
-            "imagem_mini_post_01": linha[8],
-            "imagem_post_03": linha[9],
+            "imagem_post": linha[5],
+            "fonte": linha[6],
         }
 
         list_dashboards.append(dashboards)

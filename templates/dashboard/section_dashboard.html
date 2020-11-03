@@ -1,49 +1,14 @@
 {% load static %}
 
-{% for dashboard in dashboards %}
 <section>
-
     <div class="posts">
-        <article>
-            <a class="image">{{ dashboard.imagem_post_01|safe }}</a>
-<!--            <ul class="actions">-->
-<!--                <li><a href="#" class="button primary small">Mais</a></li>-->
-<!--            </ul>-->
-        </article>
-        <article>
-            <a class="image">{{ dashboard.imagem_post_02|safe }}</a>
-<!--            <ul class="actions">-->
-<!--                <li><a href="#" class="button primary small">Mais</a></li>-->
-<!--            </ul>-->
-        </article>
-    </div>
-    <br><hr>
 
-    <div class="mini-posts">
-        <article>
-            <a href="#" class="image">{{ dashboard.imagem_mini_post_01|safe }}</a>
-<!--            <ul class="actions">-->
-<!--                <li><a href="#" class="button primary small">Mais</a></li>-->
-<!--            </ul>-->
-        </article>
-    </div>
-    <br><hr>
+        {% for dashboard in dashboards %}
+            <article>
+                <a class="image">{{ dashboard.imagem_post|safe }}</a>
+                <p style="font-size: 10px;"><em>{{ dashboard.fonte|safe }}</em></p>
+            </article>
+        {% endfor %}
 
-    <div class="posts">
-        <article>
-            <a href="#" class="image">{{ dashboard.imagem_post_03|safe }}</a>
-<!--            <ul class="actions">-->
-<!--                <li><a href="#" class="button primary small">Mais</a></li>-->
-<!--            </ul>-->
-        </article>
-        <article>
-            <a href="#" class="image">{{ dashboard.imagem_post_04|safe }}</a>
-<!--            <ul class="actions">-->
-<!--                <li><a href="#" class="button primary small">Mais</a></li>-->
-<!--            </ul>-->
-        </article>
     </div>
-    <br>
-
 </section>
-{% endfor %}
