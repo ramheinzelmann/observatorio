@@ -12,3 +12,9 @@ venv.bak/
 
 # Django stuff:
 *.log
+*.sqlite
+*.observatorio
+
+start.sh
+
+media
