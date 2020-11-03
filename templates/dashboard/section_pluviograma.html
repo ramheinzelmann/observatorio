@@ -1,0 +1,14 @@
+{% load static %}
+
+{% for pluviograma in pluviogramas %}
+
+    <section>
+        <div class="mini-posts">
+            <article>
+                <a href="#" class="image">{{ pluviograma.imagem_mini_post|safe }}</a>
+                <p style="font-size: 10px;"><em>{{ pluviograma.fonte|safe }}</em></p>
+            </article>
+        </div>
+    </section>
+
+{% endfor %}

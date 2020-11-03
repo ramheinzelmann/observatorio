@@ -1,29 +1,26 @@
 
 from django.shortcuts import render
 
-from app.app import noticias_home, pluviograma_home
+from app.app import noticias_home, pluviograma_home, dashboard_home
 from app.sql import get_noticias, get_pluviograma, get_dashboard
 from app.models import Noticias, Tempertura, Precipitacao, Teams, Publicacoes, Dashboard
 
 
 def index(request):
 
+    retorno_pluviograma = get_pluviograma()
+    pluviogramas = pluviograma_home(retorno_pluviograma)
+
+    retorno_dashboard = get_dashboard()
+    dashboards = dashboard_home(retorno_dashboard)
+
     noticias = get_noticias()
-    pluviograma = get_pluviograma()
-    dashboards = get_dashboard()
-
-    if not noticias or not pluviograma:
-        return render(request, 'index.html')
-
     noticia01, noticia02 = noticias_home(noticias)
-
-    pluviograma01, pluviograma02 = pluviograma_home(pluviograma)
 
     teams = Teams.objects.all()
 
     return render(request, 'index.html', {'noticia01': noticia01, 'noticia02': noticia02, 'teams': teams,
-                                          'pluviograma01': pluviograma01, 'pluviograma02': pluviograma02,
-                                          'dashboards': dashboards})
+                                          'dashboards': dashboards, 'pluviogramas': pluviogramas})
 
 
 def noticias(request):
