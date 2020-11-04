@@ -20,14 +20,10 @@ def index(request):
 
     teams = Teams.objects.all()
     banner = Imagens_Banner.objects.all()
-    post = Post.objects.all()
 
+    post = Post.objects.all()
     for i in post:
         post = i
-
-    print()
-    print(post)
-    print()
 
     return render(request, 'index.html', {'noticia01': noticia01, 'noticia02': noticia02, 'teams': teams,
                                           'dashboards': dashboards, 'pluviogramas': pluviogramas,
