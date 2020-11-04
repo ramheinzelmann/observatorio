@@ -3,15 +3,10 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<header class="major">
-		  <h2>Nosso Time</h2>
+		  <h2>Equipe do Observatório</h2>
 		</header>
 
-		<p style="text-align: justify">
-		Qualquer empresa é resultado direto da qualidade e da competência de seu Time. Comprometimento,
-		profissionalismo e empatia com o nosso cliente são os nossos pilares.
-		Temos o orgulho de apresentar o nosso Time.
-		</p>
-		<br><br><br>
+		<p style="text-align: justify"></p>
 		<div class="row">
 
 			{% for team in teams %}
@@ -35,8 +30,7 @@
 							<blockquote>
 								<h6>{{ team.nome|safe }}</h6>
 								<span class="position">
-									Cargo: {{ team.cargo|safe }}<br>
-									Função: {{ team.funcao|safe }}
+									{{ team.cargo|safe }}<br>
 								</span>
 							</blockquote>
 						</div>

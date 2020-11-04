@@ -5,15 +5,11 @@
 
         <!-- Search -->
             <section id="search" class="alt">
-                <span>
-                    <a href="https://www.unb.br/" target="_blank">
-                        <p style="text-align: center;">
-                            <img src="{% static 'images/unb.jpg' %}" alt="" width="150" height="50">
-                        </p>
-                    </a>
-                </span>
+                <form method="post" action="#">
+                    {% csrf_token %}
+                    <input type="text" name="query" id="query" placeholder="Search" />
+                </form>
             </section>
-
         <!-- Menu -->
             <nav id="menu">
                 <header class="major">
@@ -51,14 +47,14 @@
         <!-- Rodapé -->
             <section>
                 <header class="major">
-                    <h2>Contato</h2>
+                    <h2>Propostas de parceria?</h2>
                 </header>
-                <p>Digite um texto de contato...</p>
+                <p></p>
                 <ul class="contact">
-                    <li class="icon solid fa-envelope"><a href="#">contato@contato.com.br</a></li>
-                    <li class="icon solid fa-phone">+55 61 3107-7594</li>
-                    <li class="icon solid fa-home">Campus Universitário Darcy Ribeiro, Brasília -
-                        CEP 70904-970<br />
+                    <li class="icon solid fa-envelope"><a href="#">rrfranca@unb.br</a></li>
+                    <li class="icon solid fa-phone">+55 61 9 8124-3311</li>
+                    <li class="icon solid fa-home">Campus Universitário Darcy Ribeiro, Módulo 23 do Subsolo do ICC
+                        Norte, Brasília - CEP 70904-970<br />
                     </li>
                 </ul>
             </section>
