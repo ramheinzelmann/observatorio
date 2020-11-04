@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 from app.app import noticias_home, pluviograma_home, dashboard_home
 from app.sql import get_noticias, get_pluviograma, get_dashboard
-from app.models import Noticias, Tempertura, Precipitacao, Teams, Publicacoes, Imagens_Banner
+from app.models import Noticias, Tempertura, Precipitacao, Teams, Publicacoes, Imagens_Banner, Queimadas, \
+    Alagamento, Reservatorios
 
 
 def index(request):
@@ -55,7 +56,34 @@ def precipitacao(request):
 def publicacoes(request):
 
     publicacoes = Publicacoes.objects.all()
-    if not noticias:
+    if not publicacoes:
         return render(request, 'app/publicacoes.html')
 
     return render(request, 'app/publicacoes.html', {'dados': publicacoes})
+
+
+def queimada(request):
+
+    queimada = Queimadas.objects.all()
+    if not queimada:
+        return render(request, 'app/queimada.html')
+
+    return render(request, 'app/queimada.html', {'dados': queimada})
+
+
+def alagamento(request):
+
+    alagamento = Alagamento.objects.all()
+    if not alagamento:
+        return render(request, 'app/alagamento.html')
+
+    return render(request, 'app/alagamento.html', {'dados': alagamento})
+
+
+def reservatorio(request):
+
+    reservatorio = Reservatorios.objects.all()
+    if not reservatorio:
+        return render(request, 'app/reservatorio.html')
+
+    return render(request, 'app/reservatorio.html', {'dados': reservatorio})
