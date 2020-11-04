@@ -4,7 +4,7 @@ from django.shortcuts import render
 from app.app import noticias_home, pluviograma_home, dashboard_home
 from app.sql import get_noticias, get_pluviograma, get_dashboard
 from app.models import Noticias, Tempertura, Precipitacao, Teams, Publicacoes, Imagens_Banner, Queimadas, \
-    Alagamento, Reservatorios
+    Alagamento, Reservatorios, Post
 
 
 def index(request):
@@ -20,10 +20,18 @@ def index(request):
 
     teams = Teams.objects.all()
     banner = Imagens_Banner.objects.all()
+    post = Post.objects.all()
+
+    for i in post:
+        post = i
+
+    print()
+    print(post)
+    print()
 
     return render(request, 'index.html', {'noticia01': noticia01, 'noticia02': noticia02, 'teams': teams,
                                           'dashboards': dashboards, 'pluviogramas': pluviogramas,
-                                          'banner': banner})
+                                          'banner': banner, 'post': post})
 
 
 def noticias(request):

@@ -154,3 +154,11 @@ class Imagens_Banner(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class Post(models.Model):
+    titulo = models.CharField(max_length=800, unique=True)
+    texto = RichTextField()
+
+    def __str__(self):
+        return self.titulo
