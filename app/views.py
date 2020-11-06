@@ -4,7 +4,7 @@ from django.shortcuts import render
 from app.app import noticias_home, pluviograma_home, dashboard_home
 from app.sql import get_noticias, get_pluviograma, get_dashboard
 from app.models import Noticias, Tempertura, Precipitacao, Teams, Publicacoes, Imagens_Banner, Queimadas, \
-    Alagamento, Reservatorios, Post
+    Alagamento, Reservatorios, Post, Projetos
 
 
 def index(request):
@@ -21,8 +21,8 @@ def index(request):
     teams = Teams.objects.all()
     banner = Imagens_Banner.objects.all()
 
-    post = Post.objects.all()
-    for i in post:
+    posts = Post.objects.all()
+    for i in posts:
         post = i
 
     return render(request, 'index.html', {'noticia01': noticia01, 'noticia02': noticia02, 'teams': teams,
@@ -91,3 +91,21 @@ def reservatorio(request):
         return render(request, 'app/reservatorio.html')
 
     return render(request, 'app/reservatorio.html', {'dados': reservatorio})
+
+
+def projetos(request):
+
+    projetos = Projetos.objects.all()
+    if not projetos:
+        return render(request, 'app/projetos.html')
+
+    return render(request, 'app/projetos.html', {'dados': projetos})
+
+
+def glossario(request):
+
+    # glossario = Glossario.objects.all()
+    if not glossario:
+        return render(request, 'app/glossario.html')
+
+    return render(request, 'app/glossario.html', {'dados': glossario})
