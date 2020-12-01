@@ -19,13 +19,13 @@ def get_noticias():
         noticias = {
             "id": linha[0],
             "titulo": linha[1],
-            "fonte": linha[2],
+            "url": linha[2],
             "resumo": linha[3],
             "imagem": linha[4],
             "data": linha[5],
             "publicar": linha[6],
             "autor_id": linha[7],
-            "url": linha[8],
+            "fonte": linha[8],
         }
 
         list_noticias.append(noticias)

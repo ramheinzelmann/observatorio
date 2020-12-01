@@ -109,3 +109,17 @@ def glossario(request):
         return render(request, 'app/glossario.html')
 
     return render(request, 'app/glossario.html', {'dados': glossario})
+
+
+def lcgea(request):
+
+    publicacoes = Publicacoes.objects.all()
+
+    for texto in publicacoes:
+        conteudo = texto
+        print(conteudo)
+
+    if not publicacoes:
+        return render(request, 'app/sobre_lcgea.html')
+
+    return render(request, 'app/sobre_lcgea.html', {'dados': publicacoes})

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		{% include 'dashboard/head.html' %}
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<span id="topo"></span>
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+    						{% include 'dashboard/section_header.html' %}
+
+							<!-- Section Banner -->
+							{% include 'dashboard/section_banner.html' %}
+
+							<!-- Section Pluviograma  -->
+							{% include 'dashboard/section_pluviograma.html' %}
+
+							<!-- Section Graficos -->
+							{% include 'dashboard/section_dashboard.html' %}
+
+							<!-- Section Noticias -->
+							{% include 'dashboard/section_noticias.html' %}
+
+							<!-- Section Teams -->
+							{% include 'dashboard/section_teams.html' %}
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+                {% include 'dashboard/sidebar_menu.html' %}
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

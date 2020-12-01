@@ -1,0 +1,15 @@
+{% extends 'dashboard/base.html' %}
+{% block conteudo %}
+{% load static %}
+
+    {% for dado in dados %}
+    <section style="text-align: justify">
+        <h3>Bem vindo(a) ao <strong>LCGea</strong></h3><br>
+            <span class="image object">
+                <p>{{ dado.conteudo|safe }}</p>
+                {% include 'dashboard/section_carousel_banner.html' %}
+            </span>
+    </section>
+    {% endfor %}
+
+{% endblock %}
