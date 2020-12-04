@@ -117,7 +117,6 @@ def lcgea(request):
 
     for texto in publicacoes:
         conteudo = texto
-        print(conteudo)
 
     if not publicacoes:
         return render(request, 'app/sobre_lcgea.html')
